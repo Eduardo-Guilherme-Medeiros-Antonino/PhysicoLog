@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diário Emocional</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="topo">
+        <h1>🧠 PhysicoLog</h1>
+        <p class="subtitulo">Registre suas emoções e receba uma análise inteligente neste diário emocional</p>
+    </header>
+
+    <main class="container">
+        <section class="card entrada">
+            <h2>Como foi seu dia?</h2>
+            <textarea id="diario" placeholder="Escreva aqui como se sentiu hoje..."></textarea>
+        </section>
+
+        <section class="card questionario">
+            <h2>Autoavaliação diária</h2>
+
+            <div class="pergunta">
+                <label>1️⃣ Senti dificuldade para me concentrar.</label>
+                <select id="p1">
+                    <option>Nunca</option>
+                    <option>Raramente</option>
+                    <option>Às vezes</option>
+                    <option>Frequentemente</option>
+                    <option>Sempre</option>
+                </select>
+            </div>
+
+            <div class="pergunta">
+                <label>2️⃣ Me senti ansioso(a) ou tenso(a) sem motivo.</label>
+                <select id="p2">
+                    <option>Nunca</option>
+                    <option>Raramente</option>
+                    <option>Às vezes</option>
+                    <option>Frequentemente</option>
+                    <option>Sempre</option>
+                </select>
+            </div>
+
+            <div class="pergunta">
+                <label>3️⃣ Tive pouca motivação ou tristeza constante.</label>
+                <select id="p3">
+                    <option>Nunca</option>
+                    <option>Raramente</option>
+                    <option>Às vezes</option>
+                    <option>Frequentemente</option>
+                    <option>Sempre</option>
+                </select>
+            </div>
+        </section>
+
+        <button id="btn-analisar" class="botao" type="button">Analisar Emoções ✨</button>
+
+        <section class="card resultado" id="resultado-card">
+            <h2>Resultado da Análise</h2>
+            <div id="resultado"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Desenvolvido por Eduardo Guilherme ©</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
