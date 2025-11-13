@@ -12,3 +12,5 @@ senha: aluno123
 
 email: prof@teste.com
 senha: prof123
+
+python -m http.server 5500

@@ -1,0 +1,647 @@
+[
+  {
+    "texto": "me senti inquieto durante o dia ao realizar algumas atividades.",
+    "respostas": {
+      "tdah": "Frequentemente",
+      "ansiedade": "Frequentemente",
+      "depressao": "Nunca"
+    },
+    "emocao": "neutra",
+    "tendencia": "Tendência a TDAH",
+    "pontuacao": {
+      "tdah": 3,
+      "ansiedade": 3,
+      "depressao": 0
+    }
+  },
+  {
+    "texto": "senti dificuldade para me concentrar nas atividades da escola.",
+    "respostas": {
+      "tdah": "Sempre",
+      "ansiedade": "Às vezes",
+      "depressao": "Nunca"
+    },
+    "emocao": "triste",
+    "tendencia": "Tendência a TDAH",
+    "pontuacao": {
+      "tdah": 4,
+      "ansiedade": 2,
+      "depressao": 0
+    }
+  },
+  {
+    "texto": "me senti meio desmotivado e desconcentrado pra fazer atividades na escola.",
+    "respostas": {
+      "tdah": "Sempre",
+      "ansiedade": "Às vezes",
+      "depressao": "Nunca"
+    },
+    "emocao": "disappointment",
+    "tendencia": "Tendência a TDAH",
+    "pontuacao": {
+      "tdah": 4,
+      "ansiedade": 2,
+      "depressao": 0
+    }
+  },
+  {
+    "texto": "me senti desconcentrado para fazer as atividades",
+    "respostas": {
+      "tdah": "Sempre",
+      "ansiedade": "Às vezes",
+      "depressao": "Raramente"
+    },
+    "emocao": "neutra",
+    "tendencia": "Tendência a TDAH",
+    "pontuacao": {
+      "tdah": 4,
+      "ansiedade": 2,
+      "depressao": 1
+    }
+  },
+  {
+    "texto": "mal durante a escola",
+    "respostas": {
+      "tdah": "Sempre",
+      "ansiedade": "Às vezes",
+      "depressao": "Raramente"
+    },
+    "emocao": "neutra",
+    "tendencia": "Tendência a TDAH",
+    "pontuacao": {
+      "tdah": 4,
+      "ansiedade": 2,
+      "depressao": 1
+    }
+  },
+  {
+    "texto": "me senti ansioso durante o dia.",
+    "respostas": {
+      "tdah": "Sempre",
+      "ansiedade": "Às vezes",
+      "depressao": "Raramente"
+    },
+    "emocao": "nervoso",
+    "tendencia": "Tendência a TDAH",
+    "pontuacao": {
+      "tdah": 4,
+      "ansiedade": 2,
+      "depressao": 1
+    }
+  },
+  {
+    "texto": "tive dificuldade para me concentrar na aula.",
+    "respostas": {
+      "tdah": "Frequentemente",
+      "ansiedade": "Às vezes",
+      "depressao": "Nunca"
+    },
+    "emocao": "disappointment",
+    "tendencia": "Tendência a TDAH",
+    "pontuacao": {
+      "tdah": 3,
+      "ansiedade": 2,
+      "depressao": 0
+    }
+  },
+  {
+    "texto": "senti dificuldade de me concentrar.",
+    "respostas": {
+      "tdah": "Sempre",
+      "ansiedade": "Às vezes",
+      "depressao": "Nunca"
+    },
+    "emocao": "triste",
+    "tendencia": "Tendência a TDAH",
+    "pontuacao": {
+      "tdah": 4,
+      "ansiedade": 2,
+      "depressao": 0
+    }
+  },
+  {
+    "texto": "me senti ansioso e desatento na escola hoje",
+    "respostas": {
+      "tdah": "Frequentemente",
+      "ansiedade": "Raramente",
+      "depressao": "Nunca"
+    },
+    "emocao": "nervoso",
+    "tendencia": "Tendência a TDAH",
+    "pontuacao": {
+      "tdah": 3,
+      "ansiedade": 1,
+      "depressao": 0
+    }
+  },
+  {
+    "texto": "me senti desconcentrado para fazer as atividades de hoje.",
+    "respostas": {
+      "tdah": "Frequentemente",
+      "ansiedade": "Raramente",
+      "depressao": "Nunca"
+    },
+    "emocao": "neutra",
+    "tendencia": "Tendência a TDAH",
+    "pontuacao": {
+      "tdah": 3,
+      "ansiedade": 1,
+      "depressao": 0
+    }
+  },
+  {
+    "texto": "me senti desconcentrado para as atividades de hoje.",
+    "respostas": {
+      "tdah": "Sempre",
+      "ansiedade": "Raramente",
+      "depressao": "Nunca"
+    },
+    "emocao": "neutra",
+    "tendencia": "Tendência a TDAH",
+    "pontuacao": {
+      "tdah": 4,
+      "ansiedade": 1,
+      "depressao": 0
+    }
+  },
+  {
+    "texto": "hoje me senti cansado, mesmo sem fazer muita coisa.",
+    "respostas": {
+      "tdah": "Raramente",
+      "ansiedade": "Raramente",
+      "depressao": "Frequentemente"
+    },
+    "emocao": "neutra",
+    "tendencia": "Tendência à Depressão leve",
+    "pontuacao": {
+      "tdah": 1,
+      "ansiedade": 1,
+      "depressao": 3
+    }
+  },
+  {
+    "texto": "me senti ansioso.",
+    "respostas": {
+      "tdah": "Frequentemente",
+      "ansiedade": "Frequentemente",
+      "depressao": "Raramente"
+    },
+    "emocao": "nervoso",
+    "tendencia": "Tendência a TDAH",
+    "pontuacao": {
+      "tdah": 3,
+      "ansiedade": 3,
+      "depressao": 1
+    }
+  },
+  {
+    "texto": "me senti ansioso",
+    "respostas": {
+      "tdah": "Às vezes",
+      "ansiedade": "Às vezes",
+      "depressao": "Nunca"
+    },
+    "emocao": "nervoso",
+    "tendencia": "Tendência a Ansiedade",
+    "pontuacao": {
+      "tdah": 2,
+      "ansiedade": 2,
+      "depressao": 0
+    }
+  },
+  {
+    "texto": "me senti ansioso nas atividades diárias",
+    "respostas": {
+      "tdah": "Frequentemente",
+      "ansiedade": "Às vezes",
+      "depressao": "Nunca"
+    },
+    "emocao": "nervoso",
+    "tendencia": "Tendência a TDAH",
+    "pontuacao": {
+      "tdah": 3,
+      "ansiedade": 2,
+      "depressao": 0
+    }
+  },
+  {
+    "texto": "me senti desconcentrado hoje nas minhas atividades da escola.",
+    "respostas": {
+      "tdah": "Frequentemente",
+      "ansiedade": "Raramente",
+      "depressao": "Nunca"
+    },
+    "emocao": "disappointment",
+    "tendencia": "Tendência a TDAH",
+    "pontuacao": {
+      "tdah": 3,
+      "ansiedade": 1,
+      "depressao": 0
+    }
+  },
+  {
+    "texto": "me senti desconcentrado nas atividades",
+    "respostas": {
+      "tdah": "Frequentemente",
+      "ansiedade": "Às vezes",
+      "depressao": "Nunca"
+    },
+    "emocao": "disappointment",
+    "tendencia": "Tendência a TDAH",
+    "pontuacao": {
+      "tdah": 3,
+      "ansiedade": 2,
+      "depressao": 0
+    }
+  },
+  {
+    "texto": "senti dificuldade em me concentrar na aula.",
+    "respostas": {
+      "tdah": "Frequentemente",
+      "ansiedade": "Raramente",
+      "depressao": "Raramente"
+    },
+    "emocao": "triste",
+    "tendencia": "Tendência a TDAH",
+    "pontuacao": {
+      "tdah": 3,
+      "ansiedade": 1,
+      "depressao": 1
+    }
+  },
+  {
+    "texto": "senti dificuldade em me concentrar",
+    "respostas": {
+      "tdah": "Frequentemente",
+      "ansiedade": "Às vezes",
+      "depressao": "Raramente"
+    },
+    "emocao": "triste",
+    "tendencia": "Tendência a TDAH",
+    "pontuacao": {
+      "tdah": 3,
+      "ansiedade": 2,
+      "depressao": 1
+    }
+  },
+  {
+    "texto": "me sinto desconcentrado nas tarefas diárias",
+    "respostas": {
+      "tdah": "Frequentemente",
+      "ansiedade": "Raramente",
+      "depressao": "Raramente"
+    },
+    "emocao": "disappointment",
+    "tendencia": "Tendência a TDAH",
+    "pontuacao": {
+      "tdah": 3,
+      "ansiedade": 1,
+      "depressao": 1
+    }
+  },
+  {
+    "texto": "me senti desconcentrado para realizar minhas atividades diárias.",
+    "respostas": {
+      "tdah": "Frequentemente",
+      "ansiedade": "Raramente",
+      "depressao": "Nunca"
+    },
+    "emocao": "neutra",
+    "tendencia": "Tendência a TDAH",
+    "pontuacao": {
+      "tdah": 3,
+      "ansiedade": 1,
+      "depressao": 0
+    }
+  },
+  {
+    "texto": "senti dificuldade em me concentrar",
+    "respostas": {
+      "tdah": "Frequentemente",
+      "ansiedade": "Raramente",
+      "depressao": "Raramente"
+    },
+    "emocao": "triste",
+    "tendencia": "Tendência a TDAH",
+    "pontuacao": {
+      "tdah": 3,
+      "ansiedade": 1,
+      "depressao": 1
+    }
+  },
+  {
+    "texto": "senti dificuldade em me concentrar na aula.",
+    "respostas": {
+      "tdah": "Sempre",
+      "ansiedade": "Raramente",
+      "depressao": "Nunca"
+    },
+    "emocao": "triste",
+    "tendencia": "Tendência a TDAH",
+    "pontuacao": {
+      "tdah": 4,
+      "ansiedade": 1,
+      "depressao": 0
+    }
+  },
+  {
+    "texto": "senti dificuldade de me concentrar durante o dia.",
+    "respostas": {
+      "tdah": "Frequentemente",
+      "ansiedade": "Raramente",
+      "depressao": "Nunca"
+    },
+    "emocao": "triste",
+    "tendencia": "Tendência a TDAH",
+    "pontuacao": {
+      "tdah": 3,
+      "ansiedade": 1,
+      "depressao": 0
+    }
+  },
+  {
+    "texto": "senti dificuldade de me concentrar",
+    "respostas": {
+      "tdah": "Frequentemente",
+      "ansiedade": "Às vezes",
+      "depressao": "Nunca"
+    },
+    "emocao": "triste",
+    "tendencia": "Tendência a TDAH",
+    "pontuacao": {
+      "tdah": 3,
+      "ansiedade": 2,
+      "depressao": 0
+    }
+  },
+  {
+    "texto": "senti dificuldade de me concentrar",
+    "respostas": {
+      "tdah": "Frequentemente",
+      "ansiedade": "Raramente",
+      "depressao": "Nunca"
+    },
+    "emocao": "triste",
+    "tendencia": "Tendência a TDAH",
+    "pontuacao": {
+      "tdah": 3,
+      "ansiedade": 1,
+      "depressao": 0
+    }
+  },
+  {
+    "texto": "senti dificuldade de me concentrar",
+    "respostas": {
+      "tdah": "Frequentemente",
+      "ansiedade": "Às vezes",
+      "depressao": "Nunca"
+    },
+    "emocao": "triste",
+    "tendencia": "Tendência a TDAH",
+    "pontuacao": {
+      "tdah": 3,
+      "ansiedade": 2,
+      "depressao": 0
+    }
+  },
+  {
+    "texto": "sinto dificuldade para me concentrar nas atividades diarias",
+    "respostas": {
+      "tdah": "Frequentemente",
+      "ansiedade": "Raramente",
+      "depressao": "Raramente"
+    },
+    "emocao": "triste",
+    "tendencia": "Tendência a TDAH",
+    "pontuacao": {
+      "tdah": 3,
+      "ansiedade": 1,
+      "depressao": 1
+    }
+  },
+  {
+    "texto": "me sinto desconcentrado e desesperançoso com as metas.",
+    "respostas": {
+      "tdah": "Frequentemente",
+      "ansiedade": "Raramente",
+      "depressao": "Nunca"
+    },
+    "emocao": "nervoso",
+    "tendencia": "Tendência a TDAH",
+    "pontuacao": {
+      "tdah": 3,
+      "ansiedade": 1,
+      "depressao": 0
+    }
+  },
+  {
+    "texto": "fafsdfgsfsdsdfdf",
+    "respostas": {
+      "tdah": "Sempre",
+      "ansiedade": "Frequentemente",
+      "depressao": "Raramente"
+    },
+    "emocao": "neutra",
+    "tendencia": "Tendência a TDAH",
+    "pontuacao": {
+      "tdah": 4,
+      "ansiedade": 3,
+      "depressao": 1
+    }
+  },
+  {
+    "texto": "senti dificuldade para me concentrar.",
+    "respostas": {
+      "tdah": "Frequentemente",
+      "ansiedade": "Raramente",
+      "depressao": "Nunca"
+    },
+    "emocao": "triste",
+    "tendencia": "Tendência a TDAH",
+    "pontuacao": {
+      "tdah": 3,
+      "ansiedade": 1,
+      "depressao": 0
+    }
+  },
+  {
+    "texto": "dificuldade em me concentrar",
+    "respostas": {
+      "tdah": "Frequentemente",
+      "ansiedade": "Às vezes",
+      "depressao": "Nunca"
+    },
+    "emocao": "neutra",
+    "tendencia": "Tendência a TDAH",
+    "pontuacao": {
+      "tdah": 3,
+      "ansiedade": 2,
+      "depressao": 0
+    }
+  },
+  {
+    "texto": "sdasd",
+    "respostas": {
+      "tdah": "Raramente",
+      "ansiedade": "Raramente",
+      "depressao": "Raramente"
+    },
+    "emocao": "neutra",
+    "tendencia": "Sem tendências significativas",
+    "pontuacao": {
+      "tdah": 1,
+      "ansiedade": 1,
+      "depressao": 1
+    }
+  },
+  {
+    "texto": "sadadasdas",
+    "respostas": {
+      "tdah": "Às vezes",
+      "ansiedade": "Às vezes",
+      "depressao": "Às vezes"
+    },
+    "emocao": "irritado",
+    "tendencia": "Sem tendências significativas",
+    "pontuacao": {
+      "tdah": 2,
+      "ansiedade": 2,
+      "depressao": 2
+    }
+  },
+  {
+    "texto": "me senti mal",
+    "respostas": {
+      "tdah": "Frequentemente",
+      "ansiedade": "Às vezes",
+      "depressao": "Raramente"
+    },
+    "emocao": "triste",
+    "tendencia": "Tendência a TDAH",
+    "pontuacao": {
+      "tdah": 3,
+      "ansiedade": 2,
+      "depressao": 1
+    }
+  },
+  {
+    "texto": "me senti desconcentrado na escola.",
+    "respostas": {
+      "tdah": "Frequentemente",
+      "ansiedade": "Raramente",
+      "depressao": "Raramente"
+    },
+    "emocao": "neutra",
+    "tendencia": "Tendência a TDAH",
+    "pontuacao": {
+      "tdah": 3,
+      "ansiedade": 1,
+      "depressao": 1
+    }
+  },
+  {
+    "texto": "me sinto desconcentrado demais",
+    "respostas": {
+      "tdah": "Frequentemente",
+      "ansiedade": "Às vezes",
+      "depressao": "Raramente"
+    },
+    "emocao": "neutra",
+    "tendencia": "Tendência a TDAH",
+    "pontuacao": {
+      "tdah": 3,
+      "ansiedade": 2,
+      "depressao": 1
+    }
+  },
+  {
+    "texto": "me senti desconcentrado",
+    "respostas": {
+      "tdah": "Frequentemente",
+      "ansiedade": "Às vezes",
+      "depressao": "Nunca"
+    },
+    "emocao": "neutra",
+    "tendencia": "Tendência a TDAH",
+    "pontuacao": {
+      "tdah": 3,
+      "ansiedade": 2,
+      "depressao": 0
+    }
+  },
+  {
+    "texto": "me senti cansado",
+    "respostas": {
+      "tdah": "Às vezes",
+      "ansiedade": "Às vezes",
+      "depressao": "Raramente"
+    },
+    "emocao": "neutra",
+    "tendencia": "Sem tendências significativas",
+    "pontuacao": {
+      "tdah": 2,
+      "ansiedade": 2,
+      "depressao": 1
+    }
+  },
+  {
+    "texto": "senti dificuldade em me concentrar.",
+    "respostas": {
+      "tdah": "Frequentemente",
+      "ansiedade": "Às vezes",
+      "depressao": "Raramente"
+    },
+    "emocao": "triste",
+    "tendencia": "Tendência a TDAH",
+    "pontuacao": {
+      "tdah": 3,
+      "ansiedade": 2,
+      "depressao": 1
+    }
+  },
+  {
+    "texto": "me senti desconcentrado",
+    "respostas": {
+      "tdah": "Frequentemente",
+      "ansiedade": "Às vezes",
+      "depressao": "Raramente"
+    },
+    "emocao": "neutra",
+    "tendencia": "Tendência a TDAH",
+    "pontuacao": {
+      "tdah": 3,
+      "ansiedade": 2,
+      "depressao": 1
+    }
+  },
+  {
+    "texto": "senti dificuldade em me concentrar em alguns momentos do dia, mas isso não é tão corriqueiro normalmente. triste eu fiquei por conta de alguns acontecimentos que estão ocorrendo na minha casa.",
+    "respostas": {
+      "tdah": "Às vezes",
+      "ansiedade": "Às vezes",
+      "depressao": "Frequentemente"
+    },
+    "emocao": "triste",
+    "tendencia": "Tendência à Depressão leve",
+    "pontuacao": {
+      "tdah": 2,
+      "ansiedade": 2,
+      "depressao": 3
+    }
+  },
+  {
+    "texto": "senti dificuldade em me concentrar em alguns momentos do dia, mas isso não é tão corriqueiro normalmente. triste eu fiquei por conta de alguns acontecimentos que estão ocorrendo na minha casa.",
+    "respostas": {
+      "tdah": "Às vezes",
+      "ansiedade": "Às vezes",
+      "depressao": "Frequentemente"
+    },
+    "emocao": "triste",
+    "tendencia": "Tendência à Depressão leve",
+    "pontuacao": {
+      "tdah": 2,
+      "ansiedade": 2,
+      "depressao": 3
+    }
+  }
+]

@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
-from pysentimiento import create_analyzer
+from pysentimiento import create_analyzer  # Importado aqui
 from fastapi.middleware.cors import CORSMiddleware
 import json
 import os
@@ -8,8 +8,9 @@ from services.auth_service import (
     load_users, get_password_hash, authenticate_user, create_access_token, USERS_FILE
 )
 from services.auth_service import authenticate_user
+from fastapi.responses import JSONResponse
 
-# Mapa de tradução das emoções do inglês para português
+# Mapa de tradução das emoções
 emotions_map = {
     "nervousness": "nervoso",
     "happiness": "feliz",
@@ -23,19 +24,29 @@ emotions_map = {
 # Inicializa a aplicação FastAPI
 app = FastAPI()
 
-# Habilita CORS (permite o acesso do front-end)
+# -----------------------------------------------------------------
+# ✨ SOLUÇÃO: Carregue o modelo de IA apenas UMA VEZ
+# -----------------------------------------------------------------
+print("Carregando modelo de emoções (pysentimiento)... Aguarde.")
+# Esta linha agora executa apenas na inicialização do servidor
+analizador_emocao = create_analyzer(task="emotion", lang="pt")
+print("✅ Modelo de emoções carregado. Servidor pronto.")
+# -----------------------------------------------------------------
+
+
+# Habilita CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # altere se quiser restringir (ex: ["http://127.0.0.1:5500"])
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-# Modelo de dados de entrada (texto + respostas)
+# Modelo de dados de entrada
 class Diario(BaseModel):
     texto: str
-    respostas: dict  # Exemplo: {"tdah": "frequentemente", "ansiedade": "as vezes"}
+    respostas: dict
 
 class UserRegister(BaseModel):
     nome: str
@@ -47,20 +58,19 @@ class UserLogin(BaseModel):
     email: str
     senha: str
 
-# Rota básica para verificar se o backend está rodando
+# Rota básica
 @app.get("/")
 def home():
     return {"mensagem": "Backend funcionando perfeitamente 🚀"}
 
+# Rota de Registro
 @app.post("/register")
 def register(user: UserRegister):
     users = load_users()
 
-    # Verifica se já existe usuário com o mesmo e-mail
     if any(u["email"] == user.email for u in users):
         return {"detail": "Email já cadastrado."}, 400
 
-    # Garante que o diretório 'data' existe
     data_dir = os.path.join(os.path.dirname(__file__), "..", "data")
     os.makedirs(data_dir, exist_ok=True)
 
@@ -70,7 +80,6 @@ def register(user: UserRegister):
         "senha_hash": get_password_hash(user.senha),
         "tipo": user.tipo
     }
-
     users.append(new_user)
 
     with open(USERS_FILE, "w", encoding="utf-8") as f:
@@ -78,9 +87,7 @@ def register(user: UserRegister):
 
     return {"mensagem": "Usuário registrado com sucesso!"}
 
-
-from fastapi.responses import JSONResponse
-
+# Rota de Login
 @app.post("/login")
 def login(user: UserLogin):
     usuario = authenticate_user(user.email, user.senha)
@@ -88,8 +95,6 @@ def login(user: UserLogin):
         return JSONResponse(content={"detail": "Email ou senha incorretos."}, status_code=401)
 
     token = create_access_token({"sub": user.email})
-
-    # ✅ Garante que o tipo e nome existam
     tipo = usuario.get("tipo", "aluno")
     nome = usuario.get("nome", "Usuário")
 
@@ -99,32 +104,30 @@ def login(user: UserLogin):
         "tipo": tipo,
         "nome": nome
     }
-
-    print("✅ LOGIN BEM-SUCEDIDO:", resposta)  # debug visível no terminal
-
+    print("✅ LOGIN BEM-SUCEDIDO:", resposta)
     return JSONResponse(content=resposta, status_code=200)
 
 
-# Rota principal de análise
+# Rota principal de análise (Agora otimizada)
 @app.post("/analisar")
 def analisar(entry: Diario):
-    # Cria o analisador de emoções (modelo em português)
-    analizador_emocao = create_analyzer(task="emotion", lang="pt")
+    
+    # ❌ O modelo NÃO é mais carregado aqui
+    # analizador_emocao = create_analyzer(task="emotion", lang="pt")
 
-    # Processa o texto
+    # ✅ Apenas usamos o modelo que já está na memória
     resultado = analizador_emocao.predict(entry.texto)
 
     # Garante que a emoção retornada seja sempre string
     emocao = resultado.output
     if isinstance(emocao, list):
-        emocao = emocao[0] if len(emocao) > 0 else "neutral"  # usar key do mapa
+        emocao = emocao[0] if len(emocao) > 0 else "neutral"
 
-    # Traduz para português usando o mapa
+    # Traduz para português
     emocao = emotions_map.get(emocao.lower(), emocao)
-
     probas = resultado.probas
 
-    # Estrutura de pontuação do questionário
+    # Estrutura de pontuação
     score = {"tdah": 0, "ansiedade": 0, "depressao": 0}
     mapping = {
         "nunca": 0,
@@ -140,7 +143,7 @@ def analisar(entry: Diario):
         if chave in score:
             score[chave] = mapping.get(valor_formatado, 0)
 
-    # Interpretação dos resultados
+    # Interpretação
     tendencia = "Sem tendências significativas"
     explicacao = "Nenhum comportamento preocupante detectado."
 
@@ -154,12 +157,11 @@ def analisar(entry: Diario):
         tendencia = "Tendência à Depressão leve"
         explicacao = "O texto e respostas indicam sintomas de humor deprimido ou desmotivação."
 
-    # Salvar histórico localmente
+    # Salvar histórico
     data_dir = os.path.join(os.path.dirname(__file__), "..", "data")
     os.makedirs(data_dir, exist_ok=True)
     historico_path = os.path.join(data_dir, "historico.json")
 
-    # Lê histórico anterior, se existir
     if os.path.exists(historico_path):
         with open(historico_path, "r", encoding="utf-8") as f:
             try:
@@ -169,7 +171,6 @@ def analisar(entry: Diario):
     else:
         historico = []
 
-    # Adiciona nova entrada
     historico.append({
         "texto": entry.texto,
         "respostas": entry.respostas,
@@ -178,11 +179,10 @@ def analisar(entry: Diario):
         "pontuacao": score
     })
 
-    # Salva novamente o histórico
     with open(historico_path, "w", encoding="utf-8") as f:
         json.dump(historico, f, ensure_ascii=False, indent=2)
 
-    # Retorno JSON para o front-end
+    # Retorno JSON (agora será instantâneo)
     return {
         "emocao": {"principal": emocao, "probabilidades": probas},
         "tendencia": tendencia,
@@ -190,6 +190,7 @@ def analisar(entry: Diario):
         "pontuacao": score
     }
 
+# Rota de registros
 @app.get("/registros")
 def listar_registros():
     data_dir = os.path.join(os.path.dirname(__file__), "..", "data")
@@ -206,9 +207,7 @@ def listar_registros():
 
     return historico
 
-
-
-
+# Rota de correção de senhas
 @app.get("/corrigir_senhas")
 def corrigir_senhas():
     from services.auth_service import get_password_hash, USERS_FILE, load_users
@@ -218,7 +217,6 @@ def corrigir_senhas():
     alterado = False
 
     for u in users:
-        # Se a senha ainda estiver em texto comum, gera o hash e remove a original
         if "senha" in u and not u.get("senha", "").startswith("$2b$"):
             u["senha_hash"] = get_password_hash(u["senha"])
             u.pop("senha")
