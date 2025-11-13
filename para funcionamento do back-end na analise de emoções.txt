@@ -1,14 +1,23 @@
-1° - cd backend
+Algumas regras para o funcionamento:
+1°) Para ativar o funcionamento da maquina virtual (venv) para rodar no backend:
 
-2° - venv\Scripts\activate
+A - cd backend --> leva ao diretório;
 
-3° - uvicorn app:app --reload
+B - venv\Scripts\activate --> ativa a maquina virtual;
 
-para o front = python -m http.server 5500
+C - uvicorn app:app --reload --> para inicialização do servidor de backend FastAPI.
 
+----------------------------------------------------------------------------
 
+2°) para o funcionamento ideal do frontend, recomenda-se conecta-lo também ao servidor:
 
-Acessos do sistema: 
+A - cd frontend --> leva ao diretório;
+
+B - python -m http.server 5500 --> inicialização do servidor web HTTP local simples usando a biblioteca padrão do Python.
+
+----------------------------------------------------------------------------
+
+Acessos do sistema para testes: 
 
 email: aluno@teste.com
 senha: aluno123
@@ -16,3 +25,33 @@ senha: aluno123
 
 email: prof@teste.com
 senha: prof123
+
+----------------------------------------------------------------------------
+
+para fins de exemplificação: 
+
+Pessoa 1:
+
+"Tive muita dificuldade de prestar atenção na aula de história. Fiquei olhando pra janela e viajando nos pensamentos. Não consegui terminar o exercício de matemática na hora certa.
+
+- Sempre
+- Raramente
+- Nunca
+
+////////////////////////////////////////////////////////////////////////////
+
+Pessoa 2:
+"Na hora do recreio, senti um frio na barriga e não consegui ir falar com o grupo que eu queria. Fiquei tenso e com medo de dizer alguma bobagem. Não consegui relaxar a tarde toda."
+
+- Às vezes
+- Frequentemente
+- Raramente
+
+////////////////////////////////////////////////////////////////////////////
+
+Pessoa 3:
+""Hoje foi um dia meio 'tanto faz'. Não estava animado para ir pra escola e as coisas que eu costumo gostar não tiveram graça. Cheguei em casa e só queria deitar e não fazer nada. Triste."
+
+- Às vezes
+- Raramente
+- Sempre
