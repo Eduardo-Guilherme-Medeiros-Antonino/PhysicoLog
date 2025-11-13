@@ -4,6 +4,10 @@
 
 3° - uvicorn app:app --reload
 
+para o front = python -m http.server 5500
+
+
+
 Acessos do sistema: 
 
 email: aluno@teste.com
@@ -12,5 +16,3 @@ senha: aluno123
 
 email: prof@teste.com
 senha: prof123
-
-python -m http.server 5500
