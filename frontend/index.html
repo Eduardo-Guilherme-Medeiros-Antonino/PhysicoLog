@@ -3,14 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Diário Emocional</title>
+<title>Página principal - PhysicoLog</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header class="topo">
-        <h1>🧠 PhysicoLog</h1>
-        <p class="subtitulo">Registre suas emoções e receba uma análise inteligente neste diário emocional</p>
+        <div class="header-content">
+            <div class="site-title">
+                <h1>🧠 PhysicoLog</h1>
+                <p class="subtitulo">Registre suas emoções e receba uma análise inteligente neste diário emocional</p>
+            </div>
+
+            <!-- bloco do usuário (compacto, não quebra o header) -->
+            <div id="user-info" class="user-info" aria-live="polite">
+                <span id="user-name"></span>
+                <button id="logout-btn" class="logout-btn">Sair</button>
+            </div>
+        </div>
     </header>
 
     <main class="container">
@@ -69,5 +79,36 @@
     </footer>
 
     <script src="app.js"></script>
+
+    <!-- Script para user-info + logout (mantém lógica de sessão já usada nas outras páginas) -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const token = localStorage.getItem("token");
+            const tipo = localStorage.getItem("tipo");
+            const nome = localStorage.getItem("nome") || localStorage.getItem("email") || "Usuário";
+
+            // Se não estiver logado, volta para o login
+            if (!token || !tipo) {
+                window.location.href = "login.html";
+                return;
+            }
+
+            // Preenche o nome + tipo (ex: "Aluno Teste — Aluno")
+            const userNameEl = document.getElementById("user-name");
+            if (userNameEl) {
+                const tipoFormatado = tipo.charAt(0).toUpperCase() + tipo.slice(1);
+                userNameEl.textContent = `${nome} — ${tipoFormatado}`;
+            }
+
+            // Logout
+            const logoutBtn = document.getElementById("logout-btn");
+            if (logoutBtn) {
+                logoutBtn.addEventListener("click", () => {
+                    localStorage.clear();
+                    window.location.href = "login.html";
+                });
+            }
+        });
+    </script>
 </body>
 </html>

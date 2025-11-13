@@ -344,5 +344,65 @@
       "ansiedade": 3,
       "depressao": 1
     }
+  },
+  {
+    "texto": "Tive dificuldade em me concentrar.",
+    "respostas": {
+      "tdah": "Às vezes",
+      "ansiedade": "Raramente",
+      "depressao": "Nunca"
+    },
+    "emocao": "triste",
+    "tendencia": "Tendência à Depressão leve",
+    "pontuacao": {
+      "tdah": 2,
+      "ansiedade": 1,
+      "depressao": 0
+    }
+  },
+  {
+    "texto": "Me senti inquieto durante o dia, principalmente na escola.",
+    "respostas": {
+      "tdah": "Frequentemente",
+      "ansiedade": "Nunca",
+      "depressao": "Nunca"
+    },
+    "emocao": "neutra",
+    "tendencia": "Tendência a TDAH",
+    "pontuacao": {
+      "tdah": 3,
+      "ansiedade": 0,
+      "depressao": 0
+    }
+  },
+  {
+    "texto": "da",
+    "respostas": {
+      "tdah": "Frequentemente",
+      "ansiedade": "Nunca",
+      "depressao": "Nunca"
+    },
+    "emocao": "neutra",
+    "tendencia": "Tendência a TDAH",
+    "pontuacao": {
+      "tdah": 3,
+      "ansiedade": 0,
+      "depressao": 0
+    }
+  },
+  {
+    "texto": "me senti angustiado durante o dia, principalemente na escola.",
+    "respostas": {
+      "tdah": "Às vezes",
+      "ansiedade": "Às vezes",
+      "depressao": "Nunca"
+    },
+    "emocao": "triste",
+    "tendencia": "Tendência à Depressão leve",
+    "pontuacao": {
+      "tdah": 2,
+      "ansiedade": 2,
+      "depressao": 0
+    }
   }
 ]

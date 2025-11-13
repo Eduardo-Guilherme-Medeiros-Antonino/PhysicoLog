@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Painel do Professor - PhysicoLog</title>
+<link rel="stylesheet" href="style.css" />
+<!-- Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header class="topo">
+    <div class="header-content">
+      <div class="site-title">
+        <h1>📊 Painel do Professor — PhysicoLog</h1>
+        <p class="subtitulo">Visão geral dos registros, alertas e tendências</p>
+      </div>
+
+      <!-- bloco do usuário (igual padrão aluno) -->
+      <div id="user-info" class="user-info" aria-live="polite">
+        <span id="user-name"></span>
+        <button id="logout-btn" class="logout-btn">Sair</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Filtrar e Atualizar Dados</h2>
+      <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;">
+        <select id="select-aluno" title="Filtrar por aluno">
+          <option value="__all__">Todos os alunos</option>
+        </select>
+        <button id="btn-refresh" class="botao" type="button">Atualizar</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Alertas</h2>
+      <div id="alertas" aria-live="polite"></div>
+    </section>
+
+    <section class="card">
+      <h2>Distribuição de Emoções</h2>
+      <canvas id="chartEmocoes" height="160"></canvas>
+    </section>
+
+    <section class="card">
+      <h2>Tendências por Categoria (TDAH / Ansiedade / Depressão)</h2>
+      <canvas id="chartTendencias" height="160"></canvas>
+    </section>
+
+    <section class="card">
+      <h2>Histórico de Pontuações (média por dia)</h2>
+      <canvas id="chartPontuacoes" height="160"></canvas>
+    </section>
+
+    <section class="card">
+      <h2>Últimos Registros</h2>
+      <div id="lista-registros"></div>
+    </section>
+  </main>
+
+  <footer style="text-align:center; padding:12px;">
+    <small>Desenvolvido por Eduardo Guilherme ©</small>
+  </footer>
+
+  <script src="painel_professor.js"></script>
+
+  <!-- Script de identificação e logout -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const token = localStorage.getItem("token");
+      const tipo = localStorage.getItem("tipo");
+      const nome = localStorage.getItem("nome") || localStorage.getItem("email") || "Usuário";
+
+      // Se não estiver logado, redireciona
+      if (!token || tipo !== "professor") {
+        window.location.href = "login.html";
+        return;
+      }
+
+      // Exibe nome e tipo
+      const userNameEl = document.getElementById("user-name");
+      if (userNameEl) {
+        const tipoFormatado = tipo.charAt(0).toUpperCase() + tipo.slice(1);
+        userNameEl.textContent = `${nome} — ${tipoFormatado}`;
+      }
+
+      // Logout
+      const logoutBtn = document.getElementById("logout-btn");
+      if (logoutBtn) {
+        logoutBtn.addEventListener("click", () => {
+          localStorage.clear();
+          window.location.href = "login.html";
+        });
+      }
+    });
+  </script>
+</body>
+</html>

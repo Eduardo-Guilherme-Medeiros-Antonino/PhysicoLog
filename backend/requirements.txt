@@ -2,3 +2,8 @@ fastapi
 uvicorn
 pydantic
 pysentimiento
+pytest
+pytest-asyncio
+httpx
+PyJWT
+passlib[bcrypt]

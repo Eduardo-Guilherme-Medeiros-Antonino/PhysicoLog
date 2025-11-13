@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - PhysicoLog</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="topo">
+        <h1>PhysicoLog</h1>
+        <p class="subtitulo">Crie sua conta para começar o acompanhamento</p>
+    </header>
+    
+    <main class="container">
+        <section class="card fade-in">
+            <h2>📝 Criar Nova Conta</h2>
+            <form id="registro-form">
+                
+                <div class="input-group">
+                    <label for="nome">Nome Completo</label>
+                    <input id="nome" type="text" required class="text-input" placeholder="Seu nome" />
+                </div>
+
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input id="email" type="email" required class="text-input" placeholder="seu.email@exemplo.com" />
+                </div>
+                
+                <div class="input-group">
+                    <label for="tipo">Tipo de Usuário</label>
+                    <select id="tipo" required>
+                        <option value="aluno">Aluno(a)</option>
+                        <option value="professor">Professor(a)</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="senha">Senha</label>
+                    <input id="senha" type="password" required class="text-input" placeholder="Crie uma senha forte" />
+                </div>
+
+                <button type="submit" id="btn-registro" class="botao">Registrar</button>
+                
+                <div id="msg" class="mensagem-erro"></div>
+            </form>
+            
+            <p class="cadastro-link">
+                Já tem uma conta? <a href="login.html">Fazer Login</a>
+            </p>
+        </section>
+    </main>
+
+<script>
+async function registrar(event){
+    event.preventDefault(); 
+    
+    const nome = document.getElementById('nome').value;
+    const email = document.getElementById('email').value;
+    const senha = document.getElementById('senha').value;
+    const tipo = document.getElementById('tipo').value;
+    const msgElement = document.getElementById('msg');
+    
+    msgElement.innerText = '';
+    msgElement.classList.remove('active');
+    
+    const res = await fetch('http://127.0.0.1:8000/register', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({nome, email, senha, tipo})
+    });
+    
+    const data = await res.json();
+    
+    if(!res.ok){
+        msgElement.innerText = data.detail || 'Erro no registro. Tente outro email.';
+        msgElement.classList.add('active');
+        return;
+    }
+    
+    // Sucesso no registro
+    msgElement.innerText = 'Conta criada com sucesso! Redirecionando para o login...';
+    msgElement.classList.remove('mensagem-erro');
+    msgElement.classList.add('mensagem-sucesso', 'active');
+    
+    // Redireciona para o login após 2 segundos
+    setTimeout(() => {
+        window.location.href = '/login.html';
+    }, 2000); 
+}
+
+document.getElementById('registro-form').addEventListener('submit', registrar); 
+</script>
+</body>
+</html>

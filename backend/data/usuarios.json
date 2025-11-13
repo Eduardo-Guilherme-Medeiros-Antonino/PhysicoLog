@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "nome": "Aluno Teste",
+    "email": "aluno@teste.com",
+    "senha_hash": "$2b$12$fLc0j.LOaO/UEmessAXb4uEJ.Uo2ywA6qGowr45W/Zaky0Cq2dPhu",
+    "tipo": "aluno"
+  },
+  {
+    "id": 2,
+    "nome": "Prof. Exemplo",
+    "email": "prof@teste.com",
+    "senha_hash": "$2b$12$DMpGud4WGO55oHrgJFSUKeQ2ue1V.RRtLpKQOSQ4lNNC7IrRhcvPO",
+    "tipo": "professor"
+  }
+]

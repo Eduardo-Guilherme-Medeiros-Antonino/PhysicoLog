@@ -1,41 +1,52 @@
-document.getElementById("btn-analisar").addEventListener("click", async (event) => {
-    // 🛑 ESSENCIAL: Previne o comportamento padrão do botão, que pode recarregar a página
-    // (comum se o botão estiver em um <form> ou por padrão do navegador),
-    // o que faria o resultado do 'fetch' piscar e sumir.
-    event.preventDefault(); 
-    
+// Seleciona elementos principais
+const botao = document.getElementById("btn-analisar");
+const resultadoCard = document.getElementById("resultado-card");
+const resultadoDiv = document.getElementById("resultado");
+
+// 🧩 Garante que o botão não cause recarregamento da página
+botao.setAttribute("type", "button");
+
+// Adiciona o listener de clique
+botao.addEventListener("click", async (event) => {
+    // 🛑 Evita qualquer reload acidental da página
+    event.preventDefault();
+    console.log("✅ Clique detectado, iniciando análise...");
+
+    // Captura o texto do diário
     const texto = document.getElementById("diario").value.trim();
     if (!texto) {
         alert("Por favor, escreva algo antes de analisar!");
         return;
     }
 
+    // Coleta as respostas do questionário
     const respostas = {
         tdah: document.getElementById("p1").value,
         ansiedade: document.getElementById("p2").value,
         depressao: document.getElementById("p3").value
     };
 
-    const resultadoCard = document.getElementById("resultado-card");
-    const resultadoDiv = document.getElementById("resultado");
-
-    // Exibe o card de resultado e aplica a animação
+    // Exibe o card de resultado e mensagem de processamento
     resultadoCard.style.display = "block";
     resultadoCard.classList.add("fade-in");
     resultadoDiv.innerHTML = "Analisando emoções... 🧭";
 
     try {
+        // Faz a requisição para o backend
         const res = await fetch("http://127.0.0.1:8000/analisar", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ texto, respostas })
         });
 
+        console.log("🛰️ Resposta do backend (status):", res.status);
+
         if (!res.ok) throw new Error(`Erro ${res.status}`);
 
         const data = await res.json();
+        console.log("📦 Dados recebidos do backend:", data);
 
-        // Monta o HTML do resultado com os dados do back-end
+        // Exibe os resultados da análise
         resultadoDiv.innerHTML = `
             <p><strong>Emoção principal:</strong> ${data.emocao.principal}</p>
             <p><strong>Tendência detectada:</strong> ${data.tendencia}</p>
@@ -44,7 +55,9 @@ document.getElementById("btn-analisar").addEventListener("click", async (event) 
                <strong>Ansiedade:</strong> ${data.pontuacao?.ansiedade ?? 0} | 
                <strong>Depressão:</strong> ${data.pontuacao?.depressao ?? 0}</p>
         `;
+
     } catch (err) {
+        console.error("❌ Erro durante a análise:", err);
         resultadoDiv.innerHTML = `<p style="color:red;">❌ Erro: ${err.message}</p>`;
     }
 });
